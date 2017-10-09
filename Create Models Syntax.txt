@@ -1,0 +1,23 @@
+[[init]]
+iterators = class;
+class = 1:7;
+filename = "OADP LCA Demo - [[class]] class model.inp";
+outputDirectory = "C:\Users\tuf22063\Dropbox\R Talk\LCA";
+[[/init]]
+TITLE: LCA of Common Internalizing and Externalizing Disorders
+DATA: File is lcapsy3.10.10.dat;
+VARIABLE: NAMES ARE id ldys4 lmdd4 lsoc4 lspe4 lsep4 lobc4 lpts4 lgad4 
+    lpan4 ladh4 lcon4 lodd4 lapd4 lalc4 lpot4 ldrg4;
+          USEVARIABLES ARE ldys4 lmdd4 lsoc4 lspe4 lsep4 lobc4 lpts4 lgad4 
+    lpan4 ladh4 lcon4 lodd4 lapd4 lalc4 lpot4 ldrg4;
+          CATEGORICAL ARE ldys4 lmdd4 lsoc4 lspe4 lsep4 lobc4 lpts4 
+    lgad4 lpan4 ladh4 lcon4 lodd4 lapd4 lalc4 lpot4 ldrg4;
+          CLASS IS C ([[class]]);
+ANALYSIS: TYPE IS MIXTURE;
+          START IS 100 20;
+          STITERATIONS IS 20;
+          PROCESSORS ARE 2 (STARTS);
+OUTPUT: sampstat;
+PLOT: TYPE IS plot1 plot2 plot3;
+      SERIES IS ldys4 lmdd4 lsoc4 lspe4 lsep4 lobc4 lpts4 
+    lgad4 lpan4 ladh4 lcon4 lodd4 lapd4 lalc4 lpot4 ldrg4 (*); 
